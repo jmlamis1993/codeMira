@@ -50,7 +50,6 @@ return axiosInstance()
 
 async function updateProfile(user) { 
   const id = JSON.parse(localStorage.getItem('user')).id;
-  console.log(user);
   let formData = JSON.stringify({       
     'email': user.email,
     'name': user.name,

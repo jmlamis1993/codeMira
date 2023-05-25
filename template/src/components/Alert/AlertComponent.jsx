@@ -12,12 +12,10 @@ export const AlertComponent = () => {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        console.log('llego')    
+    useEffect(() => {         
         if(activeAlert){
         setOpen(true);
-      }
-     
+      }     
     }, [activeAlert])
     
     

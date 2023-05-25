@@ -8,14 +8,20 @@ export const startlogin = (username, password) => {
     return async (dispatch) => {
       try {
         const response = await authService.login(username, password);
-        if (response.status === 201) {  
-           localStorage.setItem('user', JSON.stringify(response.data.user));  
-           localStorage.setItem('token', response.data.token.key);        
+        if (response.status === 200) {                   
+           localStorage.setItem('user', JSON.stringify(response.data.user));         
+           localStorage.setItem('token', response.data.token);        
            dispatch(authLoggin(response.data.user));
            history.push('/');
         }
       } catch (error) {
-        dispatch(uiOpenAlert('error',error.response.data.error))       
+        if(error.response){
+          dispatch(uiOpenAlert('error',error.response.data.error)) 
+        }
+        else{
+          dispatch(uiOpenAlert('error', 'Some error has occurred, please try again')) 
+        }
+            
       }
     };
   };
