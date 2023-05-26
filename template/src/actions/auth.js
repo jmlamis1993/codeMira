@@ -1,4 +1,3 @@
-
 import { types } from "../types/types";
 import { authService } from "../services/authService";
 import { history } from '../helpers/history';
@@ -9,18 +8,19 @@ export const startlogin = (username, password) => {
       try {
         const response = await authService.login(username, password);
         if (response.status === 200) {                   
-           localStorage.setItem('user', JSON.stringify(response.data.user));         
+           localStorage.setItem('user', JSON.stringify(response.data.userName));         
            localStorage.setItem('token', response.data.token);        
            dispatch(authLoggin(response.data.user));
            history.push('/');
         }
       } catch (error) {
-        if(error.response){
-          dispatch(uiOpenAlert('error',error.response.data.error)) 
-        }
-        else{
-          dispatch(uiOpenAlert('error', 'Some error has occurred, please try again')) 
-        }
+        console.log(error)
+      /*    if(error.response){
+            dispatch(uiOpenAlert('error',error.response.data.error)) 
+          }
+          else{
+            dispatch(uiOpenAlert('error', 'Some error has occurred, please try again')) 
+          }*/
             
       }
     };
@@ -69,7 +69,9 @@ export const startlogin = (username, password) => {
     return async (dispatch) => {
       try {
         const response = await authService.logout();
+        
         if (response.status === 200) {  
+           console.log(response);
            localStorage.removeItem('user');  
            localStorage.removeItem('token');        
            dispatch(authLogout());

@@ -10,6 +10,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ApartmentIcon from '@mui/icons-material/Apartment';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { NavLink as RouterLink } from 'react-router-dom';
 
 
@@ -20,38 +21,16 @@ export const mainListItems = (
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <ListItemButton  component={RouterLink}  to='/app/calendar'>
+    </ListItemButton>   
+    <ListItemButton component={RouterLink}  to='/app/product'>
       <ListItemIcon>
-        <DateRangeIcon />
+        <AddShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="Calendar" />
-    </ListItemButton>
-    <ListItemButton component={RouterLink}  to='/app/branch'>
-      <ListItemIcon>
-        <ApartmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Company"/>
+      <ListItemText primary="Product"/>
     </ListItemButton>  
-    <ListItemButton component={RouterLink}  to='/app/project'>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Project" />
-    </ListItemButton > 
-     
-    <ListItemButton component={RouterLink}  to='/app/file'>
-      <ListItemIcon>
-        <FolderIcon />
-      </ListItemIcon>
-      <ListItemText primary="Files" />
-    </ListItemButton>    
-    <ListItemButton>
-      <ListItemIcon>
-        <AlternateEmailIcon />
-      </ListItemIcon>
-      <ListItemText primary="Email" />
-    </ListItemButton>
+   
+    
+    
   </React.Fragment>
 );
 

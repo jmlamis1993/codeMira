@@ -11,17 +11,12 @@ export const AlertComponent = () => {
     const activeAlert = useSelector(state => state.ui.activeAlert);
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
-
     useEffect(() => {         
         if(activeAlert){
         setOpen(true);
       }     
-    }, [activeAlert])
-    
-    
- 
-   
-      const handleClose = (event, reason) => {
+    }, [activeAlert]) 
+ const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
           }

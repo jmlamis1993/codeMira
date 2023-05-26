@@ -10,15 +10,14 @@ const loginLayout = () => {
   return (
     <ThemeProvider theme={theme}>
     <Grid container component="main" sx={{ height: '100vh' }}>
-      <CssBaseline /> 
-           
+      <CssBaseline />           
       <Grid
         item
         xs={false}
         sm={4}
         md={7}
         sx={{
-          backgroundImage: 'url(/static/login_image.jpg)',
+          backgroundImage: 'url(/static/1.jpg)',
           backgroundRepeat: 'no-repeat',
           backgroundColor: (t) =>
             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

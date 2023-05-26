@@ -9,7 +9,7 @@ import {AlertComponent} from './components/Alert/AlertComponent'
 
 function App() {
 const {loggedIn}= useSelector(state => state.auth);
-  const routing = useRoutes(routes(loggedIn));
+  const routing = useRoutes(routes(true));
 
   return (   
     <div className="App"> 
