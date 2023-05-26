@@ -1,1 +1,3 @@
-
+Open in IntellijIdea Software the proyect.
+Database is set on LocalHost enviroment define con file application.properties inside de Project
+Only required JDK 17 instalation previosly
